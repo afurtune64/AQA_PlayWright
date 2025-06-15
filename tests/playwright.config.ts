@@ -1,6 +1,6 @@
-import { defineConfig } from "@playwright/test";
+import { PlaywrightTestConfig } from "@playwright/test";
 
-export default defineConfig({
+const config: PlaywrightTestConfig = {
   testDir: "./tests",
   timeout: 30 * 1000,
   retries: 1,
@@ -11,6 +11,8 @@ export default defineConfig({
     ignoreHTTPSErrors: true,
     video: "retain-on-failure",
     screenshot: "only-on-failure",
-    baseURL: "https://qauto.forstudy.space",
+    baseURL: "https://guest:welcome2qauto@qauto.forstudy.space/",
+    browserName: "chromium",
   },
-});
+};
+export default config;
