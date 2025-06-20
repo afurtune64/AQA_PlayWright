@@ -15,8 +15,8 @@ const config: PlaywrightTestConfig = {
     screenshot: "only-on-failure",
     baseURL: process.env.BASE_URL,
     httpCredentials: {
-      username: process.env.HTTP_USERNAME || "",
-      password: process.env.HTTP_PASSWORD || "",
+      username: process.env.BASIC_AUTH_USERNAME!,
+      password: process.env.BASIC_AUTH_PASSWORD!,
     },
     browserName: "chromium",
   },
