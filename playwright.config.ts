@@ -1,5 +1,7 @@
 import { PlaywrightTestConfig } from "@playwright/test";
 
+require("dotenv").config();
+
 const config: PlaywrightTestConfig = {
   testDir: "./tests",
   timeout: 30 * 1000,
@@ -11,7 +13,11 @@ const config: PlaywrightTestConfig = {
     ignoreHTTPSErrors: true,
     video: "retain-on-failure",
     screenshot: "only-on-failure",
-    baseURL: "https://guest:welcome2qauto@qauto.forstudy.space/",
+    baseURL: process.env.BASE_URL,
+    httpCredentials: {
+      username: process.env.HTTP_USERNAME || "",
+      password: process.env.HTTP_PASSWORD || "",
+    },
     browserName: "chromium",
   },
 };

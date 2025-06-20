@@ -1,7 +1,8 @@
 import { Page, Locator, expect } from "@playwright/test";
+import BasePage from "./BasePage";
 
-export class RegistrationPage {
-  private page: Page;
+export class RegistrationPage extends BasePage {
+  //Locators
   private nameInput: Locator;
   private lastNameInput: Locator;
   private emailInput: Locator;
@@ -12,15 +13,18 @@ export class RegistrationPage {
   private panelLayout: Locator;
 
   constructor(page: Page) {
-    this.page = page;
-    this.nameInput = page.locator('input[name="name"]');
-    this.lastNameInput = page.locator('input[name="lastName"]');
-    this.emailInput = page.locator('input[name="email"]');
-    this.passwordInput = page.locator('input[name="password"]');
-    this.repeatPasswordInput = page.locator('input[name="repeatPassword"]');
-    this.registerButton = page.getByRole("button", { name: "Register" });
-    this.modalBody = page.locator(".modal-body");
-    this.panelLayout = page.locator(".panel-layout");
+    super(page);
+    //Locators
+    this.nameInput = this.page.locator('input[name="name"]');
+    this.lastNameInput = this.page.locator('input[name="lastName"]');
+    this.emailInput = this.page.locator('input[name="email"]');
+    this.passwordInput = this.page.locator('input[name="password"]');
+    this.repeatPasswordInput = this.page.locator(
+      'input[name="repeatPassword"]'
+    );
+    this.registerButton = this.page.getByRole("button", { name: "Register" });
+    this.modalBody = this.page.locator(".modal-body");
+    this.panelLayout = this.page.locator(".panel-layout");
   }
 
   async ensureModalVisible() {
