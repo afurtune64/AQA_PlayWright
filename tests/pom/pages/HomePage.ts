@@ -1,12 +1,14 @@
 import { Page, Locator } from "@playwright/test";
+import BasePage from "./BasePage";
 
-export class HomePage {
-  private page: Page;
+export class HomePage extends BasePage {
+  //Locators
   private signUpButton: Locator;
 
   constructor(page: Page) {
-    this.page = page;
-    this.signUpButton = page.getByRole("button", { name: "Sign up" });
+    super(page);
+    //Locators
+    this.signUpButton = this.page.getByRole("button", { name: "Sign up" });
   }
 
   async navigate() {
