@@ -15,7 +15,6 @@ export const test = base.extend<MyFixtures>({
     const garagePage = new GaragePage(page);
     await garagePage.open();
     await use(garagePage);
-    await context.close();
   },
 });
 
