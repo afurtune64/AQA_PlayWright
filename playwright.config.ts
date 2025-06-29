@@ -1,4 +1,4 @@
-import { PlaywrightTestConfig } from "@playwright/test";
+import { PlaywrightTestConfig, devices } from "@playwright/test";
 
 require("dotenv").config();
 
@@ -20,5 +20,19 @@ const config: PlaywrightTestConfig = {
     },
     browserName: "chromium",
   },
+  /* Configure projects for major browsers */
+  projects: [
+    {
+      name: "setup",
+      use: { ...devices["Desktop Chrome"] },
+      testMatch: "*/setup/**.ts",
+    },
+    {
+      name: "smoke",
+      use: { ...devices["Desktop Chrome"] },
+      testIgnore: "*/setup/**.ts",
+      dependencies: ["setup"],
+    },
+  ],
 };
 export default config;
