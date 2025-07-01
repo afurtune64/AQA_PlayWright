@@ -9,7 +9,7 @@ test.describe("example to-do app", () => {
   test.beforeEach(async ({ page }) => {
     homePage = new HomePage(page);
     registrationPage = new RegistrationPage(page);
-    await homePage.navigate();
+    await homePage.open();
     await homePage.clickSignUp();
     await registrationPage.ensureModalVisible();
   });
