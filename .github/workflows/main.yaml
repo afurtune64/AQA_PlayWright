@@ -20,7 +20,7 @@ jobs:
             -v ${{ github.workspace }}:/tests \
             -w /tests \
             mcr.microsoft.com/playwright:v1.39.0-jammy \
-            npx playwright test
+            bash -c "npm ci && npx playwright test"
 
       - name: Upload Playwright report (if failed)
         if: failure()
