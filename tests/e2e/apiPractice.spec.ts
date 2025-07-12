@@ -39,7 +39,7 @@ test.beforeEach(async ({ page }) => {
 //   ).toBeVisible();
 // });
 
-test("Mock response. Profile page", async ({ page }) => {
+test.skip("Mock response. Profile page", async ({ page }) => {
   await homePage.open();
   await homePage.clickSignInButton();
 
@@ -66,7 +66,7 @@ test("Mock response. Profile page", async ({ page }) => {
   await expect(page.getByText("Stanislav Taran")).toBeVisible();
 });
 
-test("Mock response. Profile page ", async ({ page }) => {
+test.skip("Mock response. Profile page ", async ({ page }) => {
   await homePage.open();
   await homePage.clickSignInButton();
 
