@@ -32,8 +32,8 @@ import { test } from "../../fixtures/userGaragePage";
 //   });
 // });
 
-test.describe.skip("Garage Page Tests with fixtures", () => {});
-test("Add new car using userGaragePage fixtures", async ({
+test.describe("Garage Page Tests with fixtures", () => {});
+test.skip("Add new car using userGaragePage fixtures", async ({
   userGaragePage,
 }) => {
   await userGaragePage.addNewCar("Porsche", "911", "25");
