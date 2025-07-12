@@ -19,7 +19,7 @@ jobs:
           docker run --rm \
             -v ${{ github.workspace }}:/tests \
             -w /tests \
-            mcr.microsoft.com/playwright:v1.39.0-jammy \
+            mcr.microsoft.com/playwright:v1.53.0-jammy \
             bash -c "npm ci && npx playwright test"
 
       - name: Upload Playwright report (if failed)
