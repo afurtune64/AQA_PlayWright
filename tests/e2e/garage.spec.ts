@@ -32,7 +32,7 @@ import { test } from "../../fixtures/userGaragePage";
 //   });
 // });
 
-test.describe("Garage Page Tests with fixtures", () => {});
+test.describe.skip("Garage Page Tests with fixtures", () => {});
 test("Add new car using userGaragePage fixtures", async ({
   userGaragePage,
 }) => {

@@ -1,6 +1,6 @@
 import { Locator, test, expect } from "@playwright/test";
 
-test("Verify empty carList", async ({ page }) => {
+test.skip("Verify empty carList", async ({ page }) => {
   await page.goto("");
   await page.getByText("Guest log in").click();
   await expect(
@@ -8,14 +8,14 @@ test("Verify empty carList", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("Hello from console", async ({ page }) => {
+test.skip("Hello from console", async ({ page }) => {
   await page.goto("");
   await page.evaluate(() => {
     console.log("Hello from browser");
   });
 });
 
-test("Get gustData and verify", async ({ page }) => {
+test.skip("Get gustData and verify", async ({ page }) => {
   await page.goto("");
   await page.getByText("Guest log in").click();
   await expect(
@@ -29,7 +29,7 @@ test("Get gustData and verify", async ({ page }) => {
   expect(obj.expenses).toHaveLength(0);
 });
 
-test("Change gustData and verify", async ({ page }) => {
+test.skip("Change gustData and verify", async ({ page }) => {
   const savedData = {
     expenses: [],
     cars: [

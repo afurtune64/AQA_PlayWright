@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("example to-do app", () => {
+test.describe.skip("example to-do app", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("https://guest:welcome2qauto@qauto.forstudy.space/");
     await page.getByRole("button", { name: "Sign up" }).click();

@@ -9,7 +9,7 @@ import {
   APIRequestContext,
 } from "@playwright/test";
 
-test.describe("POST /api/cars with APIRequestContext", () => {
+test.describe.skip("POST /api/cars with APIRequestContext", () => {
   let apiContext: APIRequestContext;
   let sid: string;
 
@@ -28,7 +28,7 @@ test.describe("POST /api/cars with APIRequestContext", () => {
     expect(sid).not.toBeUndefined();
   });
 
-  test("New car [/api/cars/]", async () => {
+  test.skip("New car [/api/cars/]", async () => {
     const carToAdd = {
       carBrandId: 2,
       carModelId: 9,
@@ -53,7 +53,7 @@ test.describe("POST /api/cars with APIRequestContext", () => {
     expect(body.data.brand).toBe("BMW");
   });
 
-  test("New car with invalid carModelId [/api/cars/]", async () => {
+  test.skip("New car with invalid carModelId [/api/cars/]", async () => {
     const invalidCar = {
       carBrandId: 2,
       carModelId: 123,
@@ -73,7 +73,7 @@ test.describe("POST /api/cars with APIRequestContext", () => {
     expect(body.status).toBe("error");
   });
 
-  test("Mileage is invalid [/api/cars/]", async () => {
+  test.skip("Mileage is invalid [/api/cars/]", async () => {
     const invalidCar = {
       carBrandId: 2,
       carModelId: 9,

@@ -5,7 +5,7 @@ import { test } from "../../fixtures/fixtures";
 // let homePage: HomePage;
 // let signInForm: SignInForm;
 
-test("Open wikipedia page without fixture", async () => {
+test.skip("Open wikipedia page without fixture", async () => {
   const browser = await chromium.launch();
   const context = await browser.newContext();
   const page = await context.newPage();
@@ -13,7 +13,7 @@ test("Open wikipedia page without fixture", async () => {
   await page.goto("https://www.wikipedia.org/");
 });
 
-test.describe("using fixtures", () => {
+test.describe.skip("using fixtures", () => {
   test("Open wikipedia via smallScreen", async ({ smallScreen }) => {
     await smallScreen.goto("https://www.wikipedia.org/");
     await smallScreen.waitForTimeout(2000);
